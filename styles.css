@@ -1,9 +1,37 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-    margin: 0;
     font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
     font-size: 10px;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 300px 50% 30%;
+    grid-template-rows: 50px;
+    grid-gap: 20px;
 }
+
+header {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    background-color: rgb(135, 135, 252);
+}
+
+nav {
+    grid-column: 1 / span 1;
+    grid-row: 1 / last;
+    background-color: rgb(135, 252, 201);
+}
+
+section {
+    background-color: rgb(252, 135, 225);
+}
+
+aside {
+    background-color: rgb(172, 13, 20);
+}
+
