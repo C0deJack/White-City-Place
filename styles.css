@@ -7,30 +7,27 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
+    min-width: 260px;
 }
 
 /*=====================NAV========================*/
 
 nav {
-    background-color: rgb(135, 252, 201);
-    position: fixed;
-    left: 0;
-    top: 0;
     width: 300px;
-    height: 100vh;
 }
 
 .nav-title {
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.5rem;
-    color: #fff;
+    color: #ffffff;
     padding: 35px 35px 20px 35px;
     line-height: 40px;
 }
 
 .nav {
-    max-width:100%;
+    position: fixed;
+    height: 100vh;
     background: 
         linear-gradient(to bottom, rgba(250, 250, 250, 0) 15%, rgba(45, 48, 56, 1) 25%),
         url('./assets/pics/nav-WhiteCityPlace.jpg') top center no-repeat;
@@ -79,12 +76,6 @@ nav {
     text-align: center;
     width: 33.33%;
     height: 80px;
-}
-
-.nav-list > li {
-    text-align: center;
-    width: 33.33%;
-    height: 80px;
     border-right: 1px solid #3c3f47;
     border-bottom: 1px solid #3c3f47;
 }
@@ -113,6 +104,8 @@ main {
     position: relative;
     left: 300px;
     width: calc(100vw - 300px);
+    /* temp - TBD */
+    font-size: 1.2rem;
 }
 
 /*=====================HEADER========================*/
@@ -123,14 +116,19 @@ header {
     padding: 10px;
 }
 
-.weather-add,
-.weather-view {
-    background-color: rgb(250, 107, 107);
+.header-weather,
+.header-weather__add,
+.header-weather__view {
     display: inline-block;
 }
 
-.notifications {
+.header-notifications,
+.header-wifi {
     float: right;
+}
+
+.header-wifi {
+    visibility: hidden;
 }
 
 section {
@@ -141,7 +139,7 @@ section {
 
 article {
     background-color: rgb(252, 135, 225);
-    width: 70%;
+    width: 60%;
     height: 2500px;
 }
 
@@ -149,6 +147,50 @@ article {
 
 aside {
     background-color: rgb(13, 172, 151);
-    width: 30%;
+    width: 40%;
     height: 2500px;
 }
+
+/*=====================MEDIA QUERIES========================*/
+
+@media screen and (max-width: 900px){
+
+    section {
+        display: initial
+    }
+
+    article,
+    aside {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    main {
+        left: 0;
+        top: 170px;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .header-notifications {
+        visibility: hidden;
+    }
+
+    .header-wifi {
+        visibility: visible;
+    }
+
+}
+
+@media screen and (max-width: 260px){
+
+    .nav {
+        background-size: 260px;
+    }
+}
+
