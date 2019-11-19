@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     font-size: 10px;
     min-width: 260px;
 }
@@ -104,14 +104,13 @@ main {
     position: relative;
     left: 300px;
     width: calc(100vw - 300px);
-    /* temp - TBD */
-    font-size: 1.2rem;
+    font-size: 13px;
 }
 
 /*=====================HEADER========================*/
 
 header {
-    background-color: rgb(135, 135, 252);
+    background-color: #ffffff;
     height: 50px;
     padding: 10px;
 }
@@ -138,17 +137,79 @@ section {
 /*=====================ARTICLE========================*/
 
 article {
-    background-color: rgb(252, 135, 225);
     width: 60%;
-    height: 2500px;
+    padding-top: 10px;
+    background-color: #f1f1f1;
+}
+
+.article > ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+.article-title {
+    font-size: 20px;
+    padding-left: 10px;
+    color: #3c3f47;
+}
+
+.article-story {
+    background-color: rgb(66, 67, 75);
+    margin: 6px;
+    width: 45%;
+    height: 165px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.article-story__main {
+    width: 95%;
+}
+
+.article-story__date {
+    float: right;
+}
+
+.article-story__title {
+    position: absolute;
+    bottom: 25px;
+}
+
+.article-story__location {
+    position: absolute;
+    bottom: 8px;
 }
 
 /*=====================ASIDE========================*/
 
 aside {
-    background-color: rgb(13, 172, 151);
+    background-color: #f1f1f1;
     width: 40%;
     height: 2500px;
+    padding-top: 10px;
+}
+
+.aside-title {
+    font-size: 20px;
+    padding-left: 10px;
+    color: #3c3f47;
+}
+
+.aside-offer {
+    background-color: #ffffff;
+    margin: 6px;
+    width: 95%;
+    height: 115px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    color: #3c3f47;
 }
 
 /*=====================MEDIA QUERIES========================*/
@@ -185,6 +246,9 @@ aside {
         visibility: visible;
     }
 
+    .article-story {
+        width: 95%;
+    }
 }
 
 @media screen and (max-width: 260px){
